@@ -12,7 +12,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "axios": "^0.19.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "react-scripts start",
