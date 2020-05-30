@@ -1,0 +1,366 @@
+/**
+ * #.# Main styling
+ *
+ * Default css values regardless of screen resolution
+ */
+
+/* The main body elements */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  color: #333333;
+  margin: 0;
+}
+
+/* Image styling */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-link {
+  cursor: pointer;
+}
+
+/* Text elements */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cagliostro', sans-serif;
+  line-height: 1.3em;
+  margin: 1em 0 1em 0;
+  text-align: center;
+}
+
+hr {
+  margin: 3em 0;
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(to right, #fff, #8f8f8f, #fff);
+}
+
+hr:after {
+  content: '¤';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  padding: 1em;
+  background-color: #fff;
+}
+
+#root {
+  background-color: #ffffff;
+}
+
+.header {
+  background-color: #000;
+}
+
+.main-content {
+  padding: 1em;
+}
+
+.logo {
+  padding: 0.8em 0 0.1em 1em;
+}
+
+#message {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  padding: 1em;
+}
+
+.header li a:hover, .header .menu-btn:hover, .header .active {
+  background-color: #FF985A;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1em 1em 1.4em 1.8em;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #ccc;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+  background: #ccc;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked~.menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before, .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-of-type(odd) {
+  background: #eff4f6;
+}
+
+th {
+  background: #779ECC;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+td, th {
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+footer {
+  box-shadow: 0 50vh 0 50vh #000;
+}
+
+.footer-content {
+  background-color: #333333;
+  margin-top: 4em;
+}
+
+.footer-content-inner {
+  color: #ffffff;
+  padding: 0.5em;
+}
+
+/* Styling form fields */
+
+input, select {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.6em;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  min-height: 8em;
+  padding: 0.5em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+  margin-top: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  font-size: 1.1em;
+  background-color: #FF985A;
+  color: #fff;
+  padding: 1em;
+  margin-top: 0.5em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #F2C894;
+}
+
+input[type=submit]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container, .react-datepicker__input-container input {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.form-container {
+  margin: auto;
+  max-width: 25em;
+  background-color: #eff4f6;
+  padding: 1em;
+}
+
+@media all and (max-width: 767.98px) {
+  .hero-image, .hero-text {
+    display: none;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #ccc;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0.8em;
+    left: 0.8em;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  /*
+	Label the data
+	*/
+  .traingslist-table td:nth-of-type(1):before {
+    content: "Användare:";
+  }
+  .traingslist-table td:nth-of-type(2):before {
+    content: "Träningspass:";
+  }
+  .traingslist-table td:nth-of-type(3):before {
+    content: "Träningstid:";
+  }
+  .traingslist-table td:nth-of-type(4):before {
+    content: "Datum:";
+  }
+  .traingslist-table td:nth-of-type(5):before {
+    content: "Redigera:";
+  }
+  .users-table td:nth-of-type(1):before {
+    content: "Användare:";
+  }
+  .users-table td:nth-of-type(2):before {
+    content: "Redigera:";
+  }
+  .footer-content-inner {
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .header-content, .main-content, .footer-content-inner {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .header ul {
+    margin-right: 0.5em;
+  }
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 0.5em 1em 0.5em 1em;
+    background-color: #779ECC;
+    margin: 0.8em 0.5em 0 0.5em;
+    border-radius: 3px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+  .hero-image {
+    background-image: url("/images/tracks.jpg");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .hero-text {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    text-align: center;
+    position: absolute;
+    padding: 2em 0;
+    width: 1200px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+}
