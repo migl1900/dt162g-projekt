@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'app', 'build')));
 
 // Connect to MongoDB
-const MONGODB_URI = 'mongodb+srv://dt162g_admin:McPfMcPf@cluster0-p2zig.mongodb.net/training?retryWrites=true&w=majority';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
  .then(() => console.log("Database connected"))
  .catch(err => console.log(err));
