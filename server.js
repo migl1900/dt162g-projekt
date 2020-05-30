@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const path = require("path");
-require('dotenv').config()
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -13,7 +12,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'app', 'build')));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+const db = "mongodb+srv://dt162g_admin:McPfMcPf@cluster0-p2zig.mongodb.net/training?retryWrites=true&w=majority"
+mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
  .then(() => console.log("Database connected"))
  .catch(err => console.log(err));
 
