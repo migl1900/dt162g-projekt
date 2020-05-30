@@ -12,7 +12,7 @@ app.use(express.json());
 app.use('/', express.static(path.join(__dirname, 'app/build')));
 
 // Connect to MongoDB
-const db = "mongodb+srv://dt162g_admin:McPfMcPf@cluster0-p2zig.mongodb.net/training?retryWrites=true&w=majority"
+const db = process.env.ATLAS_URI || "mongodb+srv://dt162g_admin:McPfMcPf@cluster0-p2zig.mongodb.net/training?retryWrites=true&w=majority";
 mongoose.connect(db, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
  .then(() => console.log("Database connected"))
  .catch(err => console.log(err));
