@@ -17,7 +17,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
  .then(() => console.log("Database connected"))
  .catch(err => console.log(err));
 */
-const db = process.env.MONGODB_URL;
+const db = process.env.ATLAS_URI;
 
 const connectDB = async () => {
   try {
