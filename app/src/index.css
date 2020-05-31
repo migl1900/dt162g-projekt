@@ -71,6 +71,8 @@ hr:after {
 #message {
   margin-bottom: 1em;
   font-weight: bold;
+  color: #779ECC;
+  text-align: center;
 }
 
 .header ul {
