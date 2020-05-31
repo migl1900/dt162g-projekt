@@ -84,6 +84,7 @@ export default class CreateTraining extends Component {
         return (
             <div className="main-content">
                 <h2>Lägg till nytt träningspass</h2>
+                <div id="message"></div>
                 <div className="form-container">
                     <form className="form" onSubmit={this.onSubmit}>
                         <p>

@@ -210,11 +210,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:after {
-    content: "\00bb";
-    margin-left: 2px;
-}
-
 /* Styling form fields */
 
 input, select {
