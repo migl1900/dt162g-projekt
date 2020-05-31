@@ -22,7 +22,7 @@ export default class CreateTraining extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(response => {
                 if(response.data.length > 0) {
                     this.setState( {
@@ -70,7 +70,7 @@ export default class CreateTraining extends Component {
             date: this.state.date
         }
 
-        axios.post("http://localhost:5000/trainings/add", training)
+        axios.post("/trainings/add", training)
         .then(res => {
             window.location = "/"
         })

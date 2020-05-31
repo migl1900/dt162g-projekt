@@ -15,7 +15,7 @@ export default class EditUser extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/' + this.props.match.params.id)
+        axios.get('/users/' + this.props.match.params.id)
             .then(response => {
                 this.setState( {
                     username: response.data.username,
@@ -38,7 +38,7 @@ export default class EditUser extends Component {
             username: this.state.username,
         }
 
-        axios.post('http://localhost:5000/users/update/' + this.props.match.params.id, user)
+        axios.post('/users/update/' + this.props.match.params.id, user)
             .then(res => {
                 window.location = "/createuser"
             })

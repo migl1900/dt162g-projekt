@@ -25,7 +25,7 @@ export default class CreateUser extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(response => {
                 this.setState({ users: response.data })
             })
@@ -47,7 +47,7 @@ export default class CreateUser extends Component {
             username: this.state.username,
         }
 
-        axios.post("http://localhost:5000/users/add", user)
+        axios.post("/users/add", user)
             .then(res => {
                 window.location = "/createuser"
             })
@@ -58,7 +58,7 @@ export default class CreateUser extends Component {
     }
 
     deleteUser(id) {
-        axios.delete('http://localhost:5000/users/' + id)
+        axios.delete('/users/' + id)
         .then(res => document.getElementById("message").innerHTML = JSON.parse(JSON.stringify(res.data)))
         .catch(function (error) {
             console.log(error);
