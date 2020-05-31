@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-let toggle = "asc";
-
 export default class TrainingsList extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +9,11 @@ export default class TrainingsList extends Component {
         this.deleteTraining = this.deleteTraining.bind(this);
         this.onSort = this.onSort.bind(this);
 
-        this.state = {trainings: []};
+        this.state = {
+            trainings: [],
+            sort: 'desc',
+            column: null
+        };
     }
 
     componentDidMount() {
@@ -37,15 +39,47 @@ export default class TrainingsList extends Component {
     }
 
     onSort(event, sortKey) {
+
         const data = this.state.trainings;
-        if(toggle === "asc") {
+        const sort = this.state.sort;
+        const column = this.state.column;
+        if(column === sortKey) {
+            if(sort === "desc") {
+                data.sort((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
+                this.setState({
+                    sort: 'asc'
+                })
+            } else {
+                data.sort((a, b) => (a[sortKey] > b[sortKey]) ? -1 : 1);
+                this.setState({
+                    sort: 'desc'
+                })
+            }
+            this.setState({
+                column: sortKey
+            })
+        } else {
             data.sort((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
-            toggle = "desc";
+            this.setState({
+                sort: 'asc',
+                column: sortKey
+            })
+        }
+        this.setState( {
+            trainings: data
+        })
+
+        /*
+        const data = this.state.trainings;
+        if(sortDirection === "") {
+            data.sort((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
+            sortDirection = "1";
         } else {
             data.reverse((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
-            toggle = "asc";
+            sortDirection = "";
         }
         this.setState({data})
+        */
     }
 
     render() {
