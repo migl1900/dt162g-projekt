@@ -15,7 +15,7 @@ export default class TrainingsList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/trainings/')
+        axios.get('/trainings/')
             .then(response => {
                 this.setState({ trainings: response.data })
             })
@@ -25,7 +25,7 @@ export default class TrainingsList extends Component {
     }
 
     deleteTraining(id) {
-        axios.delete('http://localhost:5000/trainings/' + id)
+        axios.delete('/trainings/' + id)
             .then(res => document.getElementById("message").innerHTML = JSON.parse(JSON.stringify(res.data)))
             .catch(function (error) {
                 console.log(error);
