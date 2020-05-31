@@ -103,8 +103,8 @@ hr:after {
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
-  padding: 1em 1em 1.4em 1.8em;
+  float: right;
+  padding: 2em;
   position: relative;
   user-select: none;
 }
@@ -260,6 +260,9 @@ input[type=submit]:disabled {
   .hero-image, .hero-text {
     display: none;
   }
+  .logo {
+    max-width: 66%;
+  }
   table, thead, tbody, th, td, tr {
     display: block;
   }
@@ -345,22 +348,17 @@ input[type=submit]:disabled {
   }
   .hero-image {
     background-image: url("/images/tracks.jpg");
-    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    padding: 2em 0;
   }
   .hero-text {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     text-align: center;
-    position: absolute;
-    padding: 2em 0;
-    width: 1200px;
-    margin: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding: 1em 0 2em 0;
     color: #fff;
+    max-width: 1200px;
+    margin: auto;
   }
 }
