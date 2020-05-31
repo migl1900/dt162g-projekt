@@ -8,8 +8,8 @@ import CreateTraining from './components/createtraining.js';
 import EditTraining from './components/edittraining.js';
 import CreateUser from './components/createuser.js';
 import EditUser from './components/edituser.js';
-import Banner from "./components/banner";
-import Footer from "./components/footer";
+import Banner from "./components/banner.js";
+import Footer from "./components/footer.js";
 
 
 function App() {
