@@ -14,6 +14,7 @@ export default class EditUser extends Component {
         }
     }
 
+    // Default start method (get user with specific id)
     componentDidMount() {
         axios.get('/users/' + this.props.match.params.id)
             .then(response => {
@@ -26,11 +27,14 @@ export default class EditUser extends Component {
             })
     }
 
+    // set new state for username
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
         });
     }
+
+    // If form submitted
     onSubmit(e) {
         e.preventDefault();
 
@@ -38,6 +42,7 @@ export default class EditUser extends Component {
             username: this.state.username,
         }
 
+        // Send post request to server with values from form and current id
         axios.post('/users/update/' + this.props.match.params.id, user)
             .then(res => {
                 window.location = "/createuser"
@@ -48,6 +53,7 @@ export default class EditUser extends Component {
             })
     }
 
+    // what to display on screen
     render() {
         return (
             <div className="main-content">

@@ -1,5 +1,6 @@
 import React from "react";
 
+// include to display top banner
 function Banner() {
   return (
     <div className="hero-image">

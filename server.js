@@ -23,6 +23,7 @@ const userRouter = require("./routes/users");
 app.use("/trainings", trainingsRouter);
 app.use("/users", userRouter);
 
+// Point to React application
 app.use('/', express.static(path.join(__dirname, 'app/build')));
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'app/build/index.html'), function(err) {

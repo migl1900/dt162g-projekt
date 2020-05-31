@@ -1,3 +1,4 @@
+// jQuery to uncheck menu checkbox, acting as menu button for mobile devices, in order to hide collapsed content
 $(function () {
     "use strict";
     

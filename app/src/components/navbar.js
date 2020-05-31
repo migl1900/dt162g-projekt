@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
+// Create header with logo and navigation menu
 export default class Navbar extends Component {
     render() {
         return (

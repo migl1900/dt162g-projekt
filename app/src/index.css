@@ -5,7 +5,6 @@
  */
 
 /* The main body elements */
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1em;
@@ -15,7 +14,6 @@ body {
 }
 
 /* Image styling */
-
 img {
   max-width: 100%;
   height: auto;
@@ -26,7 +24,6 @@ img {
 }
 
 /* Text elements */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cagliostro', sans-serif;
   line-height: 1.3em;
@@ -52,6 +49,7 @@ hr:after {
   background-color: #fff;
 }
 
+/* containers */
 #root {
   background-color: #ffffff;
 }
@@ -75,6 +73,7 @@ hr:after {
   text-align: center;
 }
 
+/* Main navigation */
 .header ul {
   margin: 0;
   padding: 0;
@@ -94,7 +93,6 @@ hr:after {
 }
 
 /* menu */
-
 .header .menu {
   clear: both;
   max-height: 0;
@@ -102,7 +100,6 @@ hr:after {
 }
 
 /* menu icon */
-
 .header .menu-icon {
   cursor: pointer;
   float: right;
@@ -139,7 +136,6 @@ hr:after {
 }
 
 /* menu btn */
-
 .header .menu-btn {
   display: none;
 }
@@ -164,6 +160,7 @@ hr:after {
   top: 0;
 }
 
+/* table styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -213,7 +210,6 @@ a:hover {
 }
 
 /* Styling form fields */
-
 input, select {
   width: 100%;
   padding: 0.5em;
@@ -269,6 +265,12 @@ input[type=submit]:disabled {
   background-color: #eff4f6;
   padding: 1em;
 }
+
+/**
+ * #.# Mobile devices
+ *
+ * Specific style settings up to 768 pixels
+ */
 
 @media all and (max-width: 767.98px) {
   .hero-image, .hero-text {
@@ -334,6 +336,12 @@ input[type=submit]:disabled {
     text-align: center;
   }
 }
+
+/**
+ * #.# Desktop
+ *
+ * Specific style settings for screens larger than 768 pixels
+ */
 
 @media all and (min-width: 768px) {
   .header-content, .main-content, .footer-content-inner {

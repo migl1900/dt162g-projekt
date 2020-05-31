@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
+// Import all needed components
 import Navbar from './components/navbar.js';
 import TrainingsList from './components/trainingslist.js';
 import CreateTraining from './components/createtraining.js';
@@ -11,7 +12,7 @@ import EditUser from './components/edituser.js';
 import Banner from "./components/banner.js";
 import Footer from "./components/footer.js";
 
-
+// Create app
 function App() {
   return (
     <Router>

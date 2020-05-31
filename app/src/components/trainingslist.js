@@ -16,6 +16,7 @@ export default class TrainingsList extends Component {
         };
     }
 
+    // Default start method (get all existing training sessions)
     componentDidMount() {
         axios.get('/trainings/')
             .then(response => {
@@ -26,6 +27,7 @@ export default class TrainingsList extends Component {
             })
     }
 
+    // Method sending delete request to the server
     deleteTraining(id) {
         axios.delete('/trainings/' + id)
             .then(res => document.getElementById("message").innerHTML = JSON.parse(JSON.stringify(res.data)))
@@ -38,6 +40,7 @@ export default class TrainingsList extends Component {
         })
     }
 
+    // Sort method for table content
     onSort(event, sortKey) {
 
         const data = this.state.trainings;
@@ -68,20 +71,9 @@ export default class TrainingsList extends Component {
         this.setState( {
             trainings: data
         })
-
-        /*
-        const data = this.state.trainings;
-        if(sortDirection === "") {
-            data.sort((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
-            sortDirection = "1";
-        } else {
-            data.reverse((a, b) => (a[sortKey] > b[sortKey]) ? 1 : -1);
-            sortDirection = "";
-        }
-        this.setState({data})
-        */
     }
 
+    // what to display on screen, if table head is clicked sort method is invoked
     render() {
         var newdata = this.state.trainings;
         var deleteButton = this.deleteTraining;

@@ -1,15 +1,17 @@
 const router = require("express").Router();
 let Training = require("../models/training.model");
 
-// Get all training sessions
+// Get all training sessions from MongoDB
 router.route("/").get((req, res) => {
     Training.find()
         .then(trainings => res.json(trainings))
         .catch(err => res.status(400).json("Felmeddelande: " + err));
 });
 
-// Add training session
+// Add new training session to MongoDB
 router.route("/add").post((req, res) => {
+
+    // Get values from form
     const username = req.body.username;
     const description = req.body.description;
     const duration = Number(req.body.duration);
@@ -22,19 +24,20 @@ router.route("/add").post((req, res) => {
         date,
     });
 
+    // Save to MongoDB
     newTraining.save()
         .then(() => res.json("Träningspass tillagt!"))
         .catch(err => res.status(400).json("Felmeddelande: " + err));
 });
 
-// Get specific training session
+// Get specific training session from MongoDB
 router.route("/:id").get((req, res) => {
     Training.findById(req.params.id)
         .then(trainings => res.json(trainings))
         .catch(err => res.status(400).json("Felmeddelande: " + err));
 });
 
-// Delete training session
+// Delete training session from MongoDB
 router.route("/:id").delete((req, res) => {
     Training.findByIdAndDelete(req.params.id)
         .then(() => res.json("Träningspasset har tagits bort"))

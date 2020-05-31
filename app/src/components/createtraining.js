@@ -21,6 +21,7 @@ export default class CreateTraining extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    // Default start method (get all existing users to be used in dropdown list)
     componentDidMount() {
         axios.get('/users/')
             .then(response => {
@@ -36,30 +37,35 @@ export default class CreateTraining extends Component {
             })
     }
 
+    // set new state for username
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
         });
     }
 
+    // set new state for description
     onChangeDescription(e) {
         this.setState({
             description: e.target.value
         });
     }
 
+    // set new state for duration
     onChangeDuration(e) {
         this.setState({
             duration: e.target.value
         });
     }
 
+    // set new state for date
     onChangeDate(date) {
         this.setState({
             date: date
         });
     }
 
+    // If form submitted
     onSubmit(e) {
         e.preventDefault();
 
@@ -70,6 +76,7 @@ export default class CreateTraining extends Component {
             date: this.state.date
         }
 
+        // Send post request to server with values from form
         axios.post("/trainings/add", training)
         .then(res => {
             window.location = "/"
@@ -80,6 +87,7 @@ export default class CreateTraining extends Component {
         })
     }
 
+    // what to display on screen
     render() {
         return (
             <div className="main-content">

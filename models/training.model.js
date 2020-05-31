@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Create mongoose schema for training sessions
 const Schema = mongoose.Schema;
 
 const trainingSchema = new Schema( {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+// Component to create the rows in the users table
 const User = props => (
     <tr>
         <td>{props.user.username}</td>
@@ -24,6 +25,7 @@ export default class CreateUser extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    // Default start method (get all existing users)
     componentDidMount() {
         axios.get('/users/')
             .then(response => {
@@ -34,12 +36,14 @@ export default class CreateUser extends Component {
             })
     }
 
+    // set new state for username
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
         });
     }
 
+    // If form submitted
     onSubmit(e) {
         e.preventDefault();
 
@@ -47,6 +51,7 @@ export default class CreateUser extends Component {
             username: this.state.username,
         }
 
+        // Send post request to server with values from form
         axios.post("/users/add", user)
             .then(res => {
                 window.location = "/createuser/";
@@ -57,6 +62,7 @@ export default class CreateUser extends Component {
             })
     }
 
+    // Method sending delete request to the server
     deleteUser(id) {
         axios.delete('/users/' + id)
         .then(res => document.getElementById("message").innerHTML = JSON.parse(JSON.stringify(res.data)))
@@ -69,12 +75,14 @@ export default class CreateUser extends Component {
         })
     }
 
+    // Return value for every element in the array using User component
     userList() {
         return this.state.users.map(currentuser => {
             return <User user={currentuser} deleteUser={this.deleteUser} key={currentuser._id} />
         })
     }
 
+    // what to display on screen
     render() {
         return (
             <div className="main-content">
