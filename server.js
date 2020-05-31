@@ -9,7 +9,6 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/', express.static(path.join(__dirname, 'app/build')));
 
 // Connect to MongoDB
 const db = process.env.ATLAS_URI || "mongodb+srv://dt162g_admin:McPfMcPf@cluster0-p2zig.mongodb.net/training?retryWrites=true&w=majority";
@@ -24,9 +23,7 @@ const userRouter = require("./routes/users");
 app.use("/trainings", trainingsRouter);
 app.use("/users", userRouter);
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, 'app/build/index.html'));
-});
+app.use('/', express.static(path.join(__dirname, 'app/build')));
 
 // Start local server
 app.listen(port, () => {
