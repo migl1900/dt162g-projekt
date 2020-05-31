@@ -44,6 +44,7 @@ export default class EditUser extends Component {
             })
             .catch(function (error) {
                 console.log(error);
+                document.getElementById("message").innerHTML = "Kunde inte spara användare, kontrollera att du fyllt i ett användarnamn med minst 3 tecken och att användarnamnet inte är upptaget";
             })
     }
 

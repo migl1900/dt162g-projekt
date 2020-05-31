@@ -91,6 +91,7 @@ export default class EditTraining extends Component {
             })
             .catch(function (error) {
                 console.log(error);
+                document.getElementById("message").innerHTML = "Kunde inte spara träningspass, kontrollera att alla fälten är ifyllda och att tid står i minuter";
             })
     }
 
