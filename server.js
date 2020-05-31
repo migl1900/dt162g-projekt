@@ -24,6 +24,13 @@ app.use("/trainings", trainingsRouter);
 app.use("/users", userRouter);
 
 app.use('/', express.static(path.join(__dirname, 'app/build')));
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'app/build/index.html'), function(err) {
+        if (err) {
+        res.status(500).send(err)
+        }
+    })
+})
 
 // Start local server
 app.listen(port, () => {

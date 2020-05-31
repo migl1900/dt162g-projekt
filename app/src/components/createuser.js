@@ -49,7 +49,7 @@ export default class CreateUser extends Component {
 
         axios.post("/users/add", user)
             .then(res => {
-                window.location = "/createuser"
+                window.location = "/createuser/";
             })
             .catch(function (error) {
                 console.log(error);
