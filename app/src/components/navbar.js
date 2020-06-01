@@ -9,7 +9,7 @@ export default class Navbar extends Component {
             <nav className="header">
                 <div className="header-content">
                     <Link to="/"><img className="logo" src="/images/logga.png" alt="WorkOutLog logo"></img></Link>
-                    <input className="menu-btn" type="checkbox" id="menu-btn" title="Menu button" />
+                    <input className="menu-btn" type="checkbox" id="menu-btn" title="Menu button " />
                     <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
                     <ul className="menu">
                         <li><NavLink exact activeClassName="active" to="/">Hem</NavLink></li>
