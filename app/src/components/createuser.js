@@ -7,7 +7,7 @@ const User = props => (
     <tr>
         <td>{props.user.username}</td>
         <td>
-            <Link to={"/edituser/" + props.user._id}><img src="/images/Modify.png" alt="Edit logo" title="Redigera träningspass" /></Link>&emsp;<img src="/images/Delete.png" alt="Edit logo" title="Radera träningspass" onClick={() => { props.deleteUser(props.user._id) }} className="image-link" />
+            <Link to={"/edituser/" + props.user._id}><img src="/images/Modify.png" alt="Edit logo" title="Redigera användare" /></Link>&emsp;<img src="/images/Delete.png" alt="Edit logo" title="Radera användare" onClick={() => { props.deleteUser(props.user._id) }} className="image-link" />
         </td>
     </tr>
 )
