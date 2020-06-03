@@ -87,7 +87,6 @@ export default class CreateUser extends Component {
         return (
             <div className="main-content">
                 <h2>Registrerade användare</h2>
-                <div id="message"></div>
                 <table className="users-table">
                     <thead>
                         <tr>
@@ -101,6 +100,7 @@ export default class CreateUser extends Component {
                 </table>
                 <hr />
                 <h2>Lägg till ny användare</h2>
+                <div id="message"></div>
                 <div className="form-container">
                     <form className="form" onSubmit={this.onSubmit}>
                         <p>
