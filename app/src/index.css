@@ -24,7 +24,12 @@ img {
 }
 
 /* Text elements */
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
   font-family: 'Cagliostro', sans-serif;
   line-height: 1.3em;
   margin: 1em 0 1em 0;
@@ -66,7 +71,8 @@ hr:after {
   padding: 0.8em 0 0.1em 1em;
 }
 
-#message {
+#message, 
+#deleteMessage {
   margin-bottom: 1em;
   font-weight: bold;
   color: #FFB347;
@@ -88,7 +94,9 @@ hr:after {
   padding: 1em;
 }
 
-.header li a:hover, .header .menu-btn:hover, .header .active {
+.header li a:hover, 
+.header .menu-btn:hover, 
+.header .active {
   background-color: #FF985A;
 }
 
@@ -117,7 +125,8 @@ hr:after {
   width: 18px;
 }
 
-.header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
+.header .menu-icon .navicon:before, 
+.header .menu-icon .navicon:after {
   background: #ccc;
   content: '';
   display: block;
@@ -156,7 +165,8 @@ hr:after {
   transform: rotate(45deg);
 }
 
-.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before, .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before, 
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
@@ -210,7 +220,8 @@ a:hover {
 }
 
 /* Styling form fields */
-input, select {
+input, 
+select {
   width: 100%;
   padding: 0.5em;
   margin-top: 0.6em;
@@ -253,7 +264,9 @@ input[type=submit]:disabled {
   cursor: not-allowed;
 }
 
-.react-datepicker-wrapper, .react-datepicker__input-container, .react-datepicker__input-container input {
+.react-datepicker-wrapper, 
+.react-datepicker__input-container, 
+.react-datepicker__input-container input {
   display: block;
   width: 100%;
   border-radius: 3px;
@@ -279,7 +292,12 @@ input[type=submit]:disabled {
   .logo {
     max-width: 66%;
   }
-  table, thead, tbody, th, td, tr {
+  table, 
+  thead, 
+  tbody, 
+  th, 
+  td, 
+  tr {
     display: block;
   }
   /* Hide table headers (but not display: none;, for accessibility) */
