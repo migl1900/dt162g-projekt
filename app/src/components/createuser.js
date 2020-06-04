@@ -65,7 +65,7 @@ export default class CreateUser extends Component {
     // Method sending delete request to the server
     deleteUser(id) {
         axios.delete('/users/' + id)
-        .then(res => document.getElementById("message").innerHTML = JSON.parse(JSON.stringify(res.data)))
+        .then(res => document.getElementById("deleteMessage").innerHTML = JSON.parse(JSON.stringify(res.data)))
         .catch(function (error) {
             console.log(error);
         })
@@ -87,6 +87,7 @@ export default class CreateUser extends Component {
         return (
             <div className="main-content">
                 <h2>Registrerade användare</h2>
+                <div id="deleteMessage"></div>
                 <table className="users-table">
                     <thead>
                         <tr>
