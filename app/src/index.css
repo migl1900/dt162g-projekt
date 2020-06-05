@@ -363,7 +363,8 @@ input[type=submit]:disabled {
  */
 
 @media all and (min-width: 768px) {
-  .header-content, .main-content, .footer-content-inner {
+  .header-content, .main-content, 
+  .footer-content-inner {
     max-width: 1200px;
     margin: auto;
   }
